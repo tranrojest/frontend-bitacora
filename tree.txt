@@ -1,0 +1,63 @@
+felipe@MacBook-Pro-de-Felipe-2 frontend-bitacora % tree -I 'node_modules|.next|.git' -a
+.
+├── .DS_Store
+├── .env.local
+├── .gitignore
+├── MUI
+│   ├── MuiProvider.tsx
+│   ├── cache.ts
+│   └── theme.ts
+├── README.md
+├── app
+│   ├── RootWrapper.tsx
+│   ├── actions
+│   │   └── user.ts
+│   ├── api
+│   │   └── auth
+│   │       └── [...nextauth]
+│   │           └── route.ts
+│   ├── favicon.ico
+│   ├── fonts
+│   │   ├── GeistMonoVF.woff
+│   │   └── GeistVF.woff
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── logbook
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── users
+│   │       └── page.tsx
+│   ├── page.module.css
+│   └── page.tsx
+├── auth.config.ts
+├── auth.ts
+├── components
+│   ├── appBar
+│   │   ├── AppBar.tsx
+│   │   ├── SideBar.tsx
+│   │   └── UserInfoForm.tsx
+│   ├── appDataGrid
+│   │   ├── AppDataGrid.tsx
+│   │   ├── gridFormatters.ts
+│   │   ├── index.tsx
+│   │   └── translate.ts
+│   ├── appForm
+│   │   ├── CreateBaseForm.tsx
+│   │   └── UpdateBaseForm.tsx
+│   └── deleteDialog
+│       └── DeleteDialog.tsx
+├── context
+│   ├── AlertContext.tsx
+│   └── UserContext.tsx
+├── hooks
+│   ├── useAlert.tsx
+│   └── useUser.tsx
+├── middleware.ts
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── tree.txt
+├── tsconfig.json
+└── types
+    └── user.ts

@@ -55,10 +55,10 @@ export default function UpdateVehicleForm({ initialData, afterSubmit }: Props) {
   const fields = [
     { name: "name", label: "Nombre interno", type: "text" as const, required: true },
     { name: "plate", label: "Patente", type: "text" as const, required: true },
-    { name: "engineNumber", label: "N° Motor", type: "text" as const, required: true },
-    { name: "brand", label: "Marca", type: "text" as const, required: true },
-    { name: "model", label: "Modelo", type: "text" as const, required: true },
-    { name: "year", label: "Año", type: "number" as const, required: true },
+    { name: "engineNumber", label: "N° Motor", type: "text" as const, required: false},
+    { name: "brand", label: "Marca", type: "text" as const, required: false },
+    { name: "model", label: "Modelo", type: "text" as const, required: false },
+    { name: "year", label: "Año", type: "number" as const, required: false },
     { name: "notes", label: "Observaciones", type: "textarea" as const, rows: 3,  multiline: true },
   ];
 

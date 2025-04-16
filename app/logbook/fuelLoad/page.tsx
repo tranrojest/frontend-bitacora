@@ -35,7 +35,9 @@ export default function Page() {
       const [v, p] = await Promise.all([getAllVehicles(), getAllProviders()]);
       if (!("error" in v)) setVehicles(v);
       if (!("error" in p)) {
-        setProviders(p.filter((prov: any) => prov.type?.toLowerCase() === "fuel"));
+        setProviders(
+          p.filter((prov: any) => prov.type?.toLowerCase() === "fuel")
+        );
       }
     })();
   }, []);
@@ -91,7 +93,9 @@ export default function Page() {
             getOptionLabel={(opt) => opt.name}
             value={vehicle}
             onChange={(_, val) => setVehicle(val)}
-            renderInput={(params) => <TextField {...params} label="Vehículo" size="small" fullWidth />}
+            renderInput={(params) => (
+              <TextField {...params} label="Vehículo" size="small" fullWidth />
+            )}
           />
         </Grid>
 
@@ -101,7 +105,9 @@ export default function Page() {
             getOptionLabel={(opt) => opt.name}
             value={provider}
             onChange={(_, val) => setProvider(val)}
-            renderInput={(params) => <TextField {...params} label="Proveedor" size="small" fullWidth />}
+            renderInput={(params) => (
+              <TextField {...params} label="Proveedor" size="small" fullWidth />
+            )}
           />
         </Grid>
 
@@ -131,15 +137,20 @@ export default function Page() {
 
         <Grid item xs={12}>
           <TextField
-            label="Total ($)"
+            label="Total"
             type="text"
             value={total}
-            onChange={(e) => setTotal(e.target.value)}
+            onChange={(e) => {
+              // Guardamos solo dígitos para total
+              const cleaned = e.target.value.replace(/\D/g, "");
+              setTotal(cleaned);
+            }}
             onBlur={() => {
               if (total !== "") {
-                const num = parseFloat(total.replace(/[^.\d]/g, ""));
+                // Convertimos el string limpio a número
+                const amount = Number(total);
                 setTotal(
-                  num.toLocaleString("es-CL", {
+                  amount.toLocaleString("es-CL", {
                     style: "currency",
                     currency: "CLP",
                   })

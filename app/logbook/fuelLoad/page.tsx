@@ -54,7 +54,7 @@ export default function Page() {
       providerId: provider.id,
       invoiceNumber: invoice,
       liters: parseFloat(liters),
-      totalPrice: Number(total.replace(/[^.\d]/g, "")),
+      totalPrice: Number(total.replace(/\./g, "")),
       userId: user?.id || 0,
     };
 
